@@ -1,0 +1,250 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #2575fc;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.result {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2575fc;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.result div {
+  margin: 10px 0;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .result {
+    font-size: 16px;
+  }
+}
+
+/* Header and Theme Switcher */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switcher label {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(135deg, #1d1d1d, #333333);
+  color: #f1f1f1;
+}
+
+body.dark-mode .calculator {
+  background: rgba(40, 40, 40, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h2 {
+  color: #f1f1f1;
+}
+
+body.dark-mode label {
+  color: #ccc;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: #555;
+  color: #f1f1f1;
+  border-color: #777;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus {
+  border-color: #2575fc;
+}
+
+body.dark-mode .result {
+  background: #333;
+  color: #f1f1f1;
+}
+
+/* Input Group with Icons */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.input-group input,
+.input-group select {
+  padding-left: 45px;
+  width: calc(100% - 45px);
+}
+
+.input-group input:focus + i,
+.input-group select:focus + i {
+  color: #2575fc;
+}
+
+body.dark-mode .input-group i {
+  color: #ccc;
+}
+
+body.dark-mode .input-group input:focus + i,
+body.dark-mode .input-group select:focus + i {
+  color: #2575fc;
+}
+
+/* Chart Container */
+.chart-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+body.dark-mode .chart-container {
+  background: #333;
+}
+
+/* Error Message */
+#error-message {
+  color: #e74c3c;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease-in-out;
+}
